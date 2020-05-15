@@ -1,0 +1,306 @@
+/* import fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Resetting */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Variables */
+
+$shadow: 2px 2px 10px rgba(0,
+0,
+0,
+0.3);
+$white-shadow: 2px 2px 20px rgba(255,
+255,
+255,
+0.6);
+$blue-shadow: 2px 2px 20px rgba(0,
+0,
+255,
+0.3);
+
+/* Backgrounds */
+
+$monthly-active-color: linear-gradient(to left top,
+#6E72DF,
+#9fa5f3);
+$annually-active-color: linear-gradient(to left top,
+rgb(226, 48, 78),
+rgb(196, 127, 139));
+
+/* Font colors */
+
+$light-color: #666;
+$dark-color: #555;
+
+/* width */
+
+$toggler-width: 50px;
+$toggler-height: 30px;
+
+/* Styles classes */
+
+.annually-active-color {
+    background: $annually-active-color !important;
+}
+
+.monthly-active-color {
+    background: $monthly-active-color !important;
+}
+
+
+/* Mixins */
+
+@mixin phone {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 880px) {
+        @content;
+    }
+}
+
+html {
+    background: #f7f7ff;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Container */
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Backgrounds */
+    .top-bg {
+        top: 0;
+        right: 0;
+        z-index: -1;
+        position: absolute;
+    }
+    .bottom-bg {
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+    }
+    /* Title container */
+    .title-container {
+        margin: 30px auto 10px auto;
+        width: fit-content;
+        text-align: center;
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+            color: $dark-color;
+        }
+        .toggler-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            margin: 10px auto;
+            .price-type {
+                color: $light-color;
+                margin: 0 20px;
+                font-size: 14px;
+                &.active {
+                    color: $dark-color;
+                    font-weight: 500;
+                }
+            }
+            .toggler {
+                position: relative;
+                .toggler-area {
+                    display: inline-block;
+                    width: $toggler-width;
+                    height: $toggler-height;
+                    background: $monthly-active-color;
+                    border-radius: 15px;
+                    &.toggled {
+                        background: rgb(197, 103, 119);
+                    }
+                }
+                .toggler-ball {
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 15px;
+                    background: #fff;
+                    position: absolute;
+                    top: 2px;
+                    right: 0;
+                    margin-right: 3px;
+                    margin-left: 3px;
+                    border: 1px solid #fff;
+                }
+                #togglerButton {
+                    cursor: pointer;
+                    width: $toggler-width;
+                    height: $toggler-height;
+                    position: absolute;
+                    left: 0;
+                    opacity: 0.0;
+                }
+            }
+        }
+    }
+    /* XX Title container XX */
+    /* Prices container */
+    .prices-container {
+        margin: 10px auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        .price-container {
+            background: #fff;
+            width: 280px;
+            box-shadow: $shadow;
+            padding: 20px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 7px;
+            @include tablet {
+                margin: 20px;
+            }
+            @include phone {
+                margin: 10px;
+            }
+            &.monthly-active-color,
+            &.annually-active-color {
+                padding: 40px 0;
+                background: $monthly-active-color;
+                /* change colors to white */
+                .price-title,
+                .price-value,
+                .price-number,
+                .dollar,
+                .feature {
+                    color: #fff !important;
+                }
+            }
+            .price-title {
+                font-size: 14px;
+                margin: 10px;
+                font-weight: bold;
+                color: $light-color;
+            }
+            .price-value {
+                font-size: 50px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .price-number {
+                    color: $dark-color;
+                }
+                .dollar {
+                    font-size: 30px;
+                    margin-right: 10px;
+                    color: $light-color;
+                }
+            }
+            .features-container {
+                margin: 25px auto;
+                width: 100%;
+                .feature {
+                    margin: 0 auto;
+                    width: 90%;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-top: 1px solid #ccc;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: $light-color;
+                    &.bottom-border {
+                        border-bottom: 1px solid #ccc;
+                    }
+                }
+            }
+            .learn-more-button {
+                width: 90%;
+                padding: 10px 0;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                font-size: 10px;
+                border-radius: 5px;
+                font-weight: bold;
+                letter-spacing: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+    /* XX Prices container XX */
+}
+
+
+/* Button theme colors */
+
+.learn-more-button {
+    &.monthly-button-class {
+        background: $monthly-active-color;
+        color: #fff;
+        border: 1px solid #fff;
+        &:hover {
+            color: blue;
+            border: 1px solid blue;
+            background: #fff;
+        }
+        &.active {
+            border: 1px solid blue;
+            color: blue;
+            background: #fff;
+            &:hover {
+                color: #fff;
+                border: 1px solid #fff;
+                background: $monthly-active-color;
+            }
+        }
+    }
+    &.annually-button-class {
+        background: $annually-active-color;
+        color: #fff;
+        border: 1px solid #fff;
+        &:hover {
+            color: rgb(219, 65, 65);
+            border: 1px solid red;
+            background: #fff;
+        }
+        &.active {
+            border: 1px solid red;
+            color: rgb(219, 65, 65);
+            background: #fff;
+            &:hover {
+                color: #fff;
+                border: 1px solid #fff;
+                background: $annually-active-color;
+            }
+        }
+    }
+}
+
+
+/* XX Container XX */

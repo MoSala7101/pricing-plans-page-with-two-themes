@@ -1,0 +1,348 @@
+/* import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+/* Resetting */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Variables */
+/* Backgrounds */
+/* Font colors */
+/* width */
+/* Styles classes */
+.annually-active-color {
+  background: -webkit-gradient(linear, right bottom, left top, from(#e2304e), to(#c47f8b)) !important;
+  background: linear-gradient(to left top, #e2304e, #c47f8b) !important;
+}
+
+.monthly-active-color {
+  background: -webkit-gradient(linear, right bottom, left top, from(#6E72DF), to(#9fa5f3)) !important;
+  background: linear-gradient(to left top, #6E72DF, #9fa5f3) !important;
+}
+
+/* Mixins */
+html {
+  background: #f7f7ff;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Backgrounds */
+  /* Title container */
+  /* XX Title container XX */
+  /* Prices container */
+  /* XX Prices container XX */
+}
+
+.container .top-bg {
+  top: 0;
+  right: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.container .bottom-bg {
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.container .title-container {
+  margin: 30px auto 10px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+
+.container .title-container .title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #555;
+}
+
+.container .title-container .toggler-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 10px auto;
+}
+
+.container .title-container .toggler-container .price-type {
+  color: #666;
+  margin: 0 20px;
+  font-size: 14px;
+}
+
+.container .title-container .toggler-container .price-type.active {
+  color: #555;
+  font-weight: 500;
+}
+
+.container .title-container .toggler-container .toggler {
+  position: relative;
+}
+
+.container .title-container .toggler-container .toggler .toggler-area {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background: -webkit-gradient(linear, right bottom, left top, from(#6E72DF), to(#9fa5f3));
+  background: linear-gradient(to left top, #6E72DF, #9fa5f3);
+  border-radius: 15px;
+}
+
+.container .title-container .toggler-container .toggler .toggler-area.toggled {
+  background: #c56777;
+}
+
+.container .title-container .toggler-container .toggler .toggler-ball {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  border: 1px solid #fff;
+}
+
+.container .title-container .toggler-container .toggler #togglerButton {
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  opacity: 0.0;
+}
+
+.container .prices-container {
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .prices-container .price-container {
+  background: #fff;
+  width: 280px;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 7px;
+}
+
+@media (max-width: 880px) {
+  .container .prices-container .price-container {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container .prices-container .price-container {
+    margin: 10px;
+  }
+}
+
+.container .prices-container .price-container.monthly-active-color, .container .prices-container .price-container.annually-active-color {
+  padding: 40px 0;
+  background: -webkit-gradient(linear, right bottom, left top, from(#6E72DF), to(#9fa5f3));
+  background: linear-gradient(to left top, #6E72DF, #9fa5f3);
+  /* change colors to white */
+}
+
+.container .prices-container .price-container.monthly-active-color .price-title,
+.container .prices-container .price-container.monthly-active-color .price-value,
+.container .prices-container .price-container.monthly-active-color .price-number,
+.container .prices-container .price-container.monthly-active-color .dollar,
+.container .prices-container .price-container.monthly-active-color .feature, .container .prices-container .price-container.annually-active-color .price-title,
+.container .prices-container .price-container.annually-active-color .price-value,
+.container .prices-container .price-container.annually-active-color .price-number,
+.container .prices-container .price-container.annually-active-color .dollar,
+.container .prices-container .price-container.annually-active-color .feature {
+  color: #fff !important;
+}
+
+.container .prices-container .price-container .price-title {
+  font-size: 14px;
+  margin: 10px;
+  font-weight: bold;
+  color: #666;
+}
+
+.container .prices-container .price-container .price-value {
+  font-size: 50px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .prices-container .price-container .price-value .price-number {
+  color: #555;
+}
+
+.container .prices-container .price-container .price-value .dollar {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #666;
+}
+
+.container .prices-container .price-container .features-container {
+  margin: 25px auto;
+  width: 100%;
+}
+
+.container .prices-container .price-container .features-container .feature {
+  margin: 0 auto;
+  width: 90%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+}
+
+.container .prices-container .price-container .features-container .feature.bottom-border {
+  border-bottom: 1px solid #ccc;
+}
+
+.container .prices-container .price-container .learn-more-button {
+  width: 90%;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* Button theme colors */
+.learn-more-button.monthly-button-class {
+  background: -webkit-gradient(linear, right bottom, left top, from(#6E72DF), to(#9fa5f3));
+  background: linear-gradient(to left top, #6E72DF, #9fa5f3);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.learn-more-button.monthly-button-class:hover {
+  color: blue;
+  border: 1px solid blue;
+  background: #fff;
+}
+
+.learn-more-button.monthly-button-class.active {
+  border: 1px solid blue;
+  color: blue;
+  background: #fff;
+}
+
+.learn-more-button.monthly-button-class.active:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background: -webkit-gradient(linear, right bottom, left top, from(#6E72DF), to(#9fa5f3));
+  background: linear-gradient(to left top, #6E72DF, #9fa5f3);
+}
+
+.learn-more-button.annually-button-class {
+  background: -webkit-gradient(linear, right bottom, left top, from(#e2304e), to(#c47f8b));
+  background: linear-gradient(to left top, #e2304e, #c47f8b);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.learn-more-button.annually-button-class:hover {
+  color: #db4141;
+  border: 1px solid red;
+  background: #fff;
+}
+
+.learn-more-button.annually-button-class.active {
+  border: 1px solid red;
+  color: #db4141;
+  background: #fff;
+}
+
+.learn-more-button.annually-button-class.active:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background: -webkit-gradient(linear, right bottom, left top, from(#e2304e), to(#c47f8b));
+  background: linear-gradient(to left top, #e2304e, #c47f8b);
+}
+
+/* XX Container XX */

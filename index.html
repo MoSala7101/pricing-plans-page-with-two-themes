@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <title>Pricing Plans</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./images/bg-top.svg" alt="" class="top-bg" />
+        <img src="./images/bg-bottom.svg" alt="" class="bottom-bg" />
+        <div class="title-container">
+            <p class="title">Our Pricing</p>
+            <div class="toggler-container">
+                <p class="price-type annually">Annually</p>
+                <div class="toggler">
+                    <span class="toggler-area"></span>
+                    <span class="toggler-ball"></span>
+                    <input type="checkbox" name="is_annual" title="Pricing type" id="togglerButton" />
+                </div>
+                <p class="price-type monthly active">Monthly</p>
+            </div>
+        </div>
+
+        <div class="prices-container">
+            <div class="price-container" id="basicContainer">
+                <p class="price-title">Basic</p>
+
+                <p class="price-value">
+                    <span class="dollar">$</span>
+                    <span class="price-number"> 19.99</span>
+                </p>
+                <div class="features-container">
+                    <div class="feature">500 GB Storage</div>
+                    <div class="feature">2 Users Allowed</div>
+                    <div class="feature bottom-border">Send up to 3 GB</div>
+                </div>
+                <button class="learn-more-button monthly-button-class">Learn More</button>
+            </div>
+            <div class="price-container monthly-active-color" id="professionalContainer">
+                <p class="price-title">Professional</p>
+
+                <p class="price-value">
+                    <span class="dollar">$</span>
+                    <span class="price-number"> 24.99 </span>
+                </p>
+                <div class="features-container">
+                    <div class="feature">1 TB Storage</div>
+                    <div class="feature">5 Users Allowed</div>
+                    <div class="feature bottom-border">Send up to 10 GB</div>
+                </div>
+                <button class="learn-more-button monthly-button-class active">Learn More</button>
+            </div>
+            <div class="price-container" id="masterContainer">
+                <p class="price-title">Master</p>
+
+                <p class="price-value">
+                    <span class="dollar">$</span>
+                    <span class="price-number"> 39.99 </span>
+                </p>
+                <div class="features-container">
+                    <div class="feature">2 TB Storage</div>
+                    <div class="feature">10 Users Allowed</div>
+                    <div class="feature bottom-border">Send up to 20 GB</div>
+                </div>
+                <button class="learn-more-button monthly-button-class">Learn More</button>
+            </div>
+        </div>
+    </div>
+    <!-- jquery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
