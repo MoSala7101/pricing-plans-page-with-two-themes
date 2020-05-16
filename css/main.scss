@@ -265,13 +265,13 @@ html {
         color: #fff;
         border: 1px solid #fff;
         &:hover {
-            color: blue;
-            border: 1px solid blue;
+            color: #6E72DF;
+            border: 1px solid #6E72DF;
             background: #fff;
         }
         &.active {
-            border: 1px solid blue;
-            color: blue;
+            border: 1px solid #6E72DF;
+            color: #6E72DF;
             background: #fff;
             &:hover {
                 color: #fff;
