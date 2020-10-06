@@ -148,6 +148,7 @@ html {
   position: absolute;
   left: 0;
   opacity: 0.0;
+  top: 0;
 }
 
 .container .prices-container {
